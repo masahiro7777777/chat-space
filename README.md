@@ -17,7 +17,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
-|nickname|string||
+|nickname|string|null: false|
 ### Association
 - has_many :messages
 - has_many :groups,though: :groups_users
