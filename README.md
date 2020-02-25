@@ -34,6 +34,12 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
+## groups_tweetsテーブル
+|Column|Type|Options|
+|-------------------|
+|tweet_id|intiger|null: false|
+|group_id|string|null: false|
+
 ## groupテーブル
 |Column|Type|Options|
 |-------------------|
