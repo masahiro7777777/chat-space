@@ -29,6 +29,8 @@ Things you may want to cover:
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+belongs_to :user
+belongs_to :group
 
 ## messagesテーブル
 |Column|Type|Options|
