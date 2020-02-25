@@ -12,30 +12,29 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-# PictweetのDB設計
+#  ChatspaceのDB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|strings|null: false|
-|password|strings|null: false|
-|nickname|strings|null: false|
+|email|string|null: false|
+|nickname|string||
 ### Association
 - has_many:tweets
 - has_many:groups
 
-# groups_usersテーブル
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|intiger|null: false, foreign: true|
-|user_id|intiger|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
-## tweetsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text||
-|text|text||
-|user_id|intiger|null: false, foreign: true|
-|group_id|intiger|null: false, foreign_key: true|
+|image|text|null: false|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -44,7 +43,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, foreign: true|
-|menber|string|null: false|
 |user_id|string|null: false, foreign: true|
 ### Association
 - belongs_to :user
