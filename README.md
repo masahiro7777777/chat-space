@@ -12,6 +12,7 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+
 #  ChatspaceのDB設計
 ## usersテーブル
 |Column|Type|Options|
