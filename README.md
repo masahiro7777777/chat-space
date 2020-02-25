@@ -37,7 +37,7 @@ Things you may want to cover:
 ## groups_tweetsテーブル
 |Column|Type|Options|
 |-------------------|
-|tweet_id|intiger|null: false|
+|tweet_id|text|null: false|
 |group_id|string|null: false|
 
 ## groupテーブル
