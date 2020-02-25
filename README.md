@@ -23,6 +23,12 @@ Things you may want to cover:
 - has_many:tweets
 - has_many:groups
 
+# groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_id|intiger|null: false, foreign: true|
+|user_id|intiger|null: false, foreign_key: true|
+
 ## tweetsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -33,12 +39,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :group
-
-## groups_tweetsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|tweet_id|text|null: false|
-|group_id|string|null: false|
 
 ## groupテーブル
 |Column|Type|Options|
