@@ -47,18 +47,23 @@
       width:300px;
       background-color:#2f3e51;
       padding:20px;
-      &__name{
-        color:#ffffff;
-        font-weight: bold;
-        font-size:15px;
-        margin-bottom: 5px;
-      }
-      &__chat{
-        color:#ffffff;
-        font-weight: bold;
-        font-size:11px;
-        margin-bottom: 40px;
-      }
+        .group{
+          &__list{
+            text-decoration: none;
+            &__name{
+              color:#ffffff;
+              font-weight: bold;
+              font-size:15px;
+              margin-bottom: 5px;
+            }
+            &__chat{
+              color:#ffffff;
+              font-weight: bold;
+              font-size:11px;
+              margin-bottom: 40px;
+            }
+          }
+        }
     }
   }
   .chat-main{
