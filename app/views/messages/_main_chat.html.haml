@@ -1,39 +1,26 @@
 .chat-main
   .chat-main__header
-    .chat-main__header__group-info
-      .chat-main__header__group-info__group-name
-        test
-      .chat-main__header__group-info__menber-list
+    .chat-main__header__left
+      .chat-main__header__left__group-name
+        =@group.name
+      .chat-main__header__left__menber-list
         Menber：
-        .chat-main__headere__group-info__menber-list__menber
-          masa
-    .chat-main__header__btn
-    = link_to "#", class: "chat-main__header__btn__edit" do
-      Edit
-  .chat-main__message-list
-    .chat-main__message-list__box
-      .chat-main__message-list__box__info
-        .chat-main__message-list__box__info__talker
-          masa
-        .chat-main__message-list__box__info__date
-          2020/02/28/21:00:00
-      .chat-main__message-list__box__comment
-        aaaaa
-    .chat-main__message-list__box
-      .chat-main__message-list__box__info
-        .chat-main__message-list__box__info__talker
-          masa
-        .chat-main__message-list__box__info__date
-          2020/02/28/21:00:00
-      .chat-main__message-list__box__comment
-        aaaaa
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+    .chat-main__header__right
+      .chat-main__header__right__btn
+        = link_to edit_group_path(@group) do
+          Edit
+
+  .messages
+    = render @messages
+
   .chat-main__message-form
-    .chat-main__message-form__box
-      .chat-main__message-form__box__text
-        type a message
-        %label.image
-          = icon('fas', 'image')
-          %input.hidden{type: "file"}
-      .chat-main__message-form__box__btn
-        = link_to "#", class: "chat-main__message-form__box__btn__send" do
-          Send
+    = form_for [@group, @message] do |f|
+      .new_message__box
+        = f.text_field :content, class: 'new_message__box__text', placeholder: 'type a message'
+        = f.label :image, class: 'new_message__box__image' do
+          = icon('fas', 'image', class: 'new_message__box__image__icon')
+          = f.file_field :image, class: 'new_message__box__image__hidden'
+      .new_message__btn
+        = f.submit 'Send', class: 'new_message__btn__send'
