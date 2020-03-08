@@ -111,6 +111,7 @@
       height:calc(100vh - 100px - 90px);
       width:calc(100vw - 300px);
       padding:35px 0 0 40px;
+      overflow: scroll;
       &__box{
         &__info{
           margin-bottom: 12px;
