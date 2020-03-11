@@ -1,4 +1,4 @@
-server 'config/deploy.rb54.178.127.177', user: 'ec2-user', roles: %w{app db web}
+server '54.178.127.177', user: 'ec2-user', roles: %w{app db web}
 
 # server-based syntax
 # ======================
